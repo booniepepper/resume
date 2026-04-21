@@ -13,16 +13,14 @@
 
 \titleformat{\section}
   {\Large\bfseries\color{accent}}
-  {}{0em}{}[\vspace{-0.4em}\hrule\vspace{0.2em}]
-\titlespacing*{\section}{0pt}{1em}{0.4em}
-
-\titleformat{\subsection}
-  {\bfseries}
   {}{0em}{}
-\titlespacing*{\subsection}{0pt}{0.8em}{0.2em}
+  [{\color{accent}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{1em}{0.3em}
 
 \newcommand{\role}[4]{%
-  \subsection*{#1, #2 \normalfont\textit{--- #3} \hfill \normalfont\textmd{#4}}%
+  \vspace{0.6em}%
+  \noindent\textbf{#1, #2}\hfill{#4}\\
+  \textit{#3}\par\vspace{0.1em}%
 }
 
 \setlist[itemize]{leftmargin=1.2em,itemsep=0.15em,topsep=0.2em}
