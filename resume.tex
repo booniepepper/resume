@@ -43,10 +43,15 @@ Any language, any system, any problem. I'm a Linux-enthusiast software engineer 
 
 \section*{Experience}
 
-\role{Senior Software Engineer}{Shopify}{Ottawa, ON (Remote from WA)}{Aug 2025 -- Present}
+\role{Senior Engineer, Infrastructure Security}{Shopify}{Ottawa, ON (Remote from WA)}{Jul 2025 -- Present}
 \begin{itemize}
-  \item Provide technical leadership for software supply chain security.
-  \item Added Python support to an internal Dependabot-like dependency update service.
+  \item Design, build, and deliver security tooling and infrastructure protecting Shopify's software supply chain across monorepo and multi-repo environments. Core contributor to BumperBot (internal dependency management and enforcement platform) and Dependency Analyzer (software composition analysis).
+  \item Championed the VS Code Extension Scanning initiative end-to-end, analyzing $\sim$7,500 extensions in use across the company. Integrated Semgrep static analysis, spoofing detection, and AI-powered analysis via VertexAI to surface threats in real time. Flagged 12 extensions with critical true-positive findings --- including live malware --- for immediate denylisting and removal. Tuned rules to eliminate 600+ false positives and resolved systemic OOM failures on large extensions.
+  \item Architected and delivered full Python/uv ecosystem support for BumperBot from the ground up --- lockfile parsing, registry resolution, dependency graphing, and automated bumps --- recognized as a bonus beyond the original project scope. Co-shipped the BumperBot v1.0.0 milestone.
+  \item Migrated legacy dependency parsers (Cargo, CocoaPods, GitHub Actions) from a deprecated SDB ruleset system into BumperBot, unifying denylist enforcement across repository types on a single platform.
+  \item Contributed upstream to the open-source \href{https://github.com/package-url/purl-spec/pull/673}{PURL specification}, authoring the VS Code Extension PURL type proposal to establish a standardized identifier format for the broader software security community.
+  \item Reviewed 100+ pull requests in a six-week window across security-critical repositories, and shipped 41 PRs spanning dependency analysis, code scanning rules, and application security tooling.
+  \item Built hackathon prototypes for dependency file parser tooling and developer experience improvements.
 \end{itemize}
 
 \role{Principal Software Engineer}{Furnished Finder}{Austin, TX (Remote from WA)}{Jun 2024 -- Mar 2025}
