@@ -1,0 +1,28 @@
+on: [ push, workflow_dispatch ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/configure-pages@v5
+      - uses: jdx/mise-action@v2
+      - run: tlmgr install geometry hyperref titlesec enumitem parskip xcolor
+      - run: pdflatex -interaction=nonstopmode -halt-on-error resume.tex
+      - run: mv resume.pdf justin-hill-resume.pdf
+      - run: |
+          export TIMESTAMP=$(TZ=America/Los_Angeles date '+%B %-d, %Y at %-I:%M %p %Z')
+          tmp=$(mktemp)
+          envsubst '${TIMESTAMP}' < index.html > "$tmp"
+          mv "$tmp" index.html
+      - uses: actions/upload-pages-artifact@v4
+        with: { path: '.' }
+      - uses: actions/deploy-pages@v4
