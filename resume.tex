@@ -47,8 +47,8 @@ Any language, any system, any problem. I'm a Linux-enthusiast software engineer 
 \role{Senior Engineer, Infrastructure Security}{Shopify}{Ottawa, ON (Remote from WA)}{Jul 2025 -- Present}
 \begin{itemize}
   \item Design, build, and deliver security tooling and infrastructure protecting Shopify's software supply chain across monorepo and multi-repo environments. Core contributor to BumperBot (internal dependency management and enforcement platform) and Dependency Analyzer (software composition analysis).
-  \item Pioneered a 7-day dependency cooldown strategy before a formal effort existed, then joined a three-person tiger team to implement it across multiple languages and package managers --- a core defense preventing zero-day supply chain attacks from reaching Shopify. Identified how to vend the capability, and drove enforcement across multiple CI paradigms, Nix and proprietary development environments, and projects on developer laptops company-wide. Personally migrated hundreds of projects and supported rollout to thousands more.
-  \item Championed and led a team delivering the VS Code Extension Scanning initiative end-to-end, analyzing $\sim$7,500 extensions in use across the company. Integrated Semgrep static analysis, spoofing detection, and AI-powered analysis via VertexAI to surface threats in real time. Flagged 12 extensions with critical true-positive findings --- including live malware --- for immediate denylisting and removal. Tuned rules to eliminate 600+ false positives and resolved systemic OOM failures on large extensions.
+  \item Pioneered a 7-day dependency cooldown strategy to block zero-day supply chain attacks, then co-implemented it across multiple languages and package managers on a three-person tiger team. Designed the vending approach and drove enforcement across CI paradigms, Nix and proprietary development environments, and developer laptops company-wide. Personally migrated hundreds of projects and supported rollout to thousands more.
+  \item Championed and led a team delivering VS Code Extension Scanning end-to-end across $\sim$7,500 extensions company-wide. Combined Semgrep, spoofing detection, and VertexAI-powered analysis to flag 12 extensions with critical true-positive findings --- including live malware --- for denylisting and removal. Tuned rules to eliminate 600+ false positives and fixed systemic OOM failures on large extensions.
   \item Architected and delivered full Python/uv ecosystem support for BumperBot from the ground up --- lockfile parsing, registry resolution, dependency graphing, and automated bumps --- recognized as a bonus beyond the original project scope. Co-shipped the BumperBot v1.0.0 milestone.
   \item Migrated legacy dependency parsers (Cargo, CocoaPods, GitHub Actions) from a deprecated SDB ruleset system into BumperBot, unifying denylist enforcement across repository types on a single platform.
   \item Contributed upstream to the open-source \href{https://github.com/package-url/purl-spec/pull/673}{PURL specification}, authoring the VS Code Extension PURL type proposal to establish a standardized identifier format for the broader software security community.
@@ -85,27 +85,21 @@ Any language, any system, any problem. I'm a Linux-enthusiast software engineer 
 
 \textit{Builder Tools (2020 -- 2023)}
 \begin{itemize}
-  \item Founding member of the ``Code Foundations'' organization at Amazon. Spent three years shaping scope and leading development of foundational polyglot infrastructure --- language and toolchain integrations, build, infrastructure, monitoring, and CI/CD --- used across Amazon, AWS, Twitch, and other subsidiaries.
-  \item Responded to critical security events across multiple language ecosystems: performed impact analysis, produced patches and mitigations, and coordinated cross-functional rollout.
-  \item Raised support levels for Java and adjacent JVM communities (Kotlin, Scala, Groovy, Clojure) in collaboration with each community. Contributions included template services and libraries in Kotlin, improvements to Amazon-specific IDE integrations for Kotlin and Scala, and cleaner import procedures.
-  \item Presented internally on topics like building Kotlin-based Android projects against Amazon's new codebase, including a talk at the internal ``Intent'' Android conference.
-  \item Built integrations that enabled Amazon's new codebase to target ARM (AArch64/Graviton), with working examples in Java, TypeScript, JavaScript, Python, Perl, Assembly, C, Fortran, and Zig.
-  \item Added the Clojars external connection to AWS CodeArtifact, enabling Clojure users.
+  \item Founding member of the ``Code Foundations'' organization. Shaped scope and led development of foundational polyglot build, infrastructure, monitoring, and CI/CD used across Amazon, AWS, Twitch, and other subsidiaries.
+  \item Built integrations that enabled Amazon's new codebase to target ARM (AArch64/Graviton), with working examples spanning Java, TypeScript, JavaScript, Python, Perl, Assembly, C, Fortran, and Zig.
+  \item Responded to critical security events across multiple language ecosystems: impact analysis, patches and mitigations, and coordinated cross-functional rollout.
 \end{itemize}
 
 \textit{AWS Commerce Platform (2017 -- 2020)}
 \begin{itemize}
-  \item Designed and built components of a $\sim$0ms-latency HTTP peer-proxying system and live ETL/filtering/transform primitives for a region-build effort spanning $\sim$500 engineers and $\sim$100 billing and finance services.
-  \item On a SWAT team, shipped tactical work across AWS metering, billing, taxing, invoicing, and auditing: new IaC libraries in TypeScript and Ruby for Amazon-proprietary systems, CLIs for standing up ``data migration zone'' resources, and new best-practices documentation for data migration.
-  \item Designed and built a Java file-handling microservice on AWS Lambda --- with unit and integration tests, a canary, IaC, monitoring, alarming, and structured logging. Introduced lazy-dependency-loading patterns (without a heavy DI framework) that cut Java/Lambda cold starts; the canary pattern was picked up by other services.
-  \item Built new integrations across billing-lifecycle services --- some request/reply over RPC, many event-driven via queues.
+  \item Designed and built components of a $\sim$0ms-latency HTTP peer-proxying system and live ETL primitives for a region-build effort spanning $\sim$500 engineers and $\sim$100 billing and finance services.
+  \item Built a Java file-handling microservice on AWS Lambda and introduced a lazy-dependency-loading pattern (no heavy DI framework) that cut cold starts; the canary pattern was adopted by other services.
 \end{itemize}
 
 \textit{AWS Customer Support (2014 -- 2017)}
 \begin{itemize}
-  \item Built an internal monitoring system in JavaScript on Node.js that prevented development outages when internal AWS accounts hit account limits.
+  \item Built a JavaScript/Node.js monitoring system that prevented recurring development outages across the Amazon and AWS developer community. At the time, the company operated out of a single shared AWS account that routinely hit service scaling limits --- predating the multi-account-by-default model.
   \item Automated a tedious refund process in JavaScript for AWS Support; in its first year (2015) it saved over \$1mm in operating costs and \$1mm in development costs.
-  \item Resolved sensitive, policy-ambiguous issues for customers via phone and email on an escalations team.
 \end{itemize}
 
 \role{Open Source Software Contributor}{Personal Pursuits}{Remote}{2016 -- Present}
