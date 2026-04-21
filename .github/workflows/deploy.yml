@@ -24,7 +24,7 @@ jobs:
           tmp=$(mktemp)
           envsubst <index.html >"$tmp"
           mv "$tmp" index.html
-          mv resume.pdf "$DATE-justin-hill-resume.pdf
+          mv resume.pdf "$DATE-justin-hill-resume.pdf"
       - uses: actions/upload-pages-artifact@v4
         with: { path: '.' }
       - uses: actions/deploy-pages@v4
