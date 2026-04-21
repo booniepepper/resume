@@ -17,12 +17,14 @@ jobs:
       - uses: jdx/mise-action@v2
       - run: tlmgr install geometry hyperref titlesec enumitem parskip xcolor
       - run: pdflatex -interaction=nonstopmode -halt-on-error resume.tex
-      - run: mv resume.pdf justin-hill-resume.pdf
       - run: |
-          export TIMESTAMP=$(TZ=America/Los_Angeles date '+%B %-d, %Y at %-I:%M %p %Z')
+          export TZ=America/Los_Angeles
+          export TIMESTAMP="$(date '+%B %-d, %Y at %-I:%M %p %Z')"
+          export DATE="$(date -Idate)"
           tmp=$(mktemp)
-          envsubst '${TIMESTAMP}' < index.html > "$tmp"
+          envsubst <index.html >"$tmp"
           mv "$tmp" index.html
+          mv resume.pdf "$DATE-justin-hill-resume.pdf
       - uses: actions/upload-pages-artifact@v4
         with: { path: '.' }
       - uses: actions/deploy-pages@v4
